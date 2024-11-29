@@ -1,6 +1,6 @@
 # Software
 
-Here, the author describes the hul-common-lib and the cirasame-soft.
+Here, the author describes the hul-common-lib and the rayraw-soft.
 
 ## hul-common-lib
 
@@ -34,26 +34,23 @@ Triggered-type ADC multi-hit TDC専用のデータ収集用プログラムです
 - トリガー入力をNIM-IN1へアサイン
 - TDCとADCへのサーチ窓の設定
 - イベントカウンタのリセット
+- ADCブロックの初期化状況の確認
 
-This program accesses the AD9220 block in the FPGA and reads out the ADC data for the specified number of events.
-The data that has just been read is written to the file specified by the argument.
-As described in the firmware section, no header or trailer words are added to indicate the end of an event.
-Process every 132 words.
-**This program should not be terminated by Ctrl-C.**
-If users stop it by Ctrl-C, data in the next run will be broken.
+を行ってからTCP接続を行いデータ読み出しを開始します。
+上記はRAYRAWボードの制御であり、データ読み出しのシーケンスとは独立のため1つのプログラム内で全て行う必要は本来ありません。
+このプログラムでは簡単のために全てを1つの実行体内で行っていますが、移植の際には制御部は適宜分離してください。
 
-Example to read 100 events and store them to hoge.dat.
 ```shell
-       [IP]          [file]   [Events]
-ad9220 192.168.10.16 hoge.dat 100
+    [IP]           [Run No] [Num of events] [Window max] [Window min]
+daq 192.168.10.16  1        10000           500              300
 ```
 
-#### hgddelay
+上記の例ではサーチ窓を300から500にセットし、10000イベントを`./data/run1.dat`というファイルへ保存します。
+サーチ窓のLSB精度およびビット幅はファームウェアのシステムクロック周期に依存します。
+ファームウェアの項目を参照してください。
+ここで指定した値がTDCとADC両方に対して使用されます。
+サーチ窓値のLSB精度をA nsとすると、上記例ではコモンストップ信号からみて`300*A - 500*A`秒過去のデータが取得できます。
 
-Please read the Hold Generator sub-section in RAYRAW skeleton firmware section.
-In this program, the register value given at 2nd argument is transformed to the mask pattern.
-The value of 1 provides the smallest delay amount, and the delay amount increases as the given value increases.
-**Please set the register value before calling ad9220 program**
 
 ## rayraw-control
 

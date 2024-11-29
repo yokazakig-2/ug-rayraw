@@ -24,35 +24,32 @@ Please also see the [AMANEQ user guide](https://spadi-alliance.github.io/ug-aman
 The specification is summarized as follows.
 
 - Size: 140 mm (H) x 200 mm (V)
-- Num of MPPCs: 2 (S14826(ES1) x2)
+- MPPC input
     - 128ch in total
-    - If you prepare an intermediate board changing a connector type, other types of MPPCs can be read.
-- ASIC: Weeroc/Omega CITIROC 1A BGA x4
+    - Connector: FX2B-68PA-1.27DSL(71)
+- ASIC: KEK E-sys YAENAMI v1 x4
 - Bias: MAX1932ETC+T
     - Supply range: 40-70V (256 steps)
     - Maximum output current: 2.5 mA
 - Analog outputs:
-    - One analog high-gain output from CITIROC
-    - One probe output from CITIROC
+    - Differential output from each ASIC
 - FPGA: AMD Xilinx XC7K-160T-2FFG676C
 - Flash memory: CYPRESS S25FL128SAGMFIR01
 - Data links: SFP+ (10 Gbps in maximum)
     - Link media depends on the type of SFP modules.
 - Clock synchronization: One MIKUMARI port (SFP)
-- Num of NIM input: 1 (LEMO)
-- Num of NIM output: 1 (LEMO)
+- Num of NIM input: 2 (LEMO)
+- Num of NIM output: 2 (LEMO)
 - Power supply: 20-35V DC
     - Jack: 2.10mm ID, 5.50mm OD
     - Main connector: 日本圧着端子 S2P-VH(LF)(SN)
     - **Note that the connector is different from that on AMANEQ**
 - Fuse limit: 1A
     - Fuse product: Littelfuse 0251001.NRT1L
-- Num of DIP switch bits: 4
+- Num of DIP switch bits: 8
 - Clock generator IC: TI CDCE62002
-- External memory: 2Gb DDR3-SDRAM
-    - Speed: DDR3-1333 (max)
 
-![RAYRAW-BLOCK](rayraw-block.png "Block diagram of GN-2006-4"){: #RAYRAW-BLOCK width="70%"}
+![RAYRAW-BLOCK](rayraw-block.png "Block diagram of GN-2226-1"){: #RAYRAW-BLOCK width="60%"}
 
 MPPCs are biased by the MAX1932 bias supply, which is controlled by FPGA.
 It can control output voltage with 256 steps between 40V to 70V.
