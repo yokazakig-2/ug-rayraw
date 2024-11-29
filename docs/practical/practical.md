@@ -7,3 +7,7 @@ All the things written in the AMANEQ practical section are also important for CI
 
 Currently, the initialization of CDCE62002 at first power-on, is not required for CIRASAME since CDCE62002 is not used in the present firmware.
 It may be required in the future upgrade.
+
+## Usage
+
+ここにデータを取れるようになるまでの手順を書く。

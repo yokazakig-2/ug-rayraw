@@ -4,7 +4,7 @@
 
 ### New
 
-- De facto release version
+- hogehoge
     - CIRASAME Skeleton v2.0
     - CIRASAME-StrLRTDC v2.5
 
