@@ -17,9 +17,9 @@ The FPGA mounted on the board is AMD Xilinx Kintex-7 FPGA (XC7K-160T-2FFG676C), 
 This board has the same a jitter (CDCE62002) as that on AMANEQ.
 Thus, the digital part of RAYRAW is based on the design of AMANEQ, it uses many same ICs.
 RAYRAW also has dedicated functionalities for operating SiPMs, i.e., an APD bias supply IC (MAX19232ETC+T).
-Please also see the [AMANEQ user guide](https://spadi-alliance.github.io/ug-amaneq/) and the [CIRASAME user guide](https://spadi-alliance.github.io/ug-cirasame/).
+Please also see the [AMANEQ user guide](https://spadi-alliance.github.io/ug-amaneq/) and the [RAYRAW user guide](https://spadi-alliance.github.io/ug-RAYRAW/).
 
-![RAYRAW-PIC](pic-cirasame.png "Picture of RAYRAW-v1 GN-2226-1"){: #RAYRAW-PIC width="80%"}
+![RAYRAW-PIC](pic-rayraw.png "Picture of RAYRAW-v1 GN-2226-1"){: #RAYRAW-PIC width="80%"}
 
 The specification is summarized as follows.
 
@@ -52,7 +52,7 @@ The specification is summarized as follows.
 - External memory: 2Gb DDR3-SDRAM
     - Speed: DDR3-1333 (max)
 
-![CIRASAME-BLOCK](cirasame-block.png "Block diagram of GN-2006-4"){: #CIRASAME-BLOCK width="70%"}
+![RAYRAW-BLOCK](rayraw-block.png "Block diagram of GN-2006-4"){: #RAYRAW-BLOCK width="70%"}
 
 MPPCs are biased by the MAX1932 bias supply, which is controlled by FPGA.
 It can control output voltage with 256 steps between 40V to 70V.
@@ -75,22 +75,16 @@ In the [figure](#CITIROC-BLOCK), the ASIC control lines from the FPGA are omitte
 
 ### SiPM input
 
-![MPPC-CN](mppc-connector.png "Dimension drawing viewed from the solder side."){: #MPPC-CN width="80%"}
+![MPPC-CN](dummy.png "Dimension drawing viewed from the solder side."){: #MPPC-CN width="80%"}
 
 The [figure](#MPPC-CN) is the dimension drawing around the MPPC connectors when you view it from the solder side.
 As mentioned above, this board is design to mount S14826(ES1), which is the special order product, not on the catalog.
 Please contact with HPK if you order the same one.
-If you need to readout other MPPC products using CIRASAME, please develop a board changing connector type based on this drawing.
-
-### VCCAD selection switch
-
-![VCCAD](vccad-sel.png "VCCAD voltage selection switch."){: #VCCAD width="70%"}
-
-Please short-circuit the 1.8V side pins as shown in the [figure](#VCCAD).
+If you need to readout other MPPC products using RAYRAW, please develop a board changing connector type based on this drawing.
 
 ### MPPC bias
 
-![BIAS](bias.png "MPPC bias supply."){: #BIAS width="70%"}
+![BIAS](dummy.png "MPPC bias supply."){: #BIAS width="70%"}
 
 When you use MAX1932 as the MPPC bias supply, pleas short-circuit the left side jumper pins.
 If you want to supply bias externally, please short-circuit the right side pins, and connect the bias cable to the MMCM connector.
@@ -105,17 +99,17 @@ As this port is the same as that on AMANEQ, please also see the [AMANEQ user gui
 
 ### DIP, LED
 
-![DIP](dip.png "DIP switch"){: #DIP width="70%"}
+![DIP](dummy.png "DIP switch"){: #DIP width="70%"}
 
 The DIP switch is set to the left side where "ON" is printed, a logic 0 is taken in the FPGA.
 The function of each bit depends on each firmware.
 
-There is no LED on CIRASAME even for indicating FPGA configuration done since CIRASAME is expected to be installed in a black box together with a detector.
+There is no LED on RAYRAW even for indicating FPGA configuration done since RAYRAW is expected to be installed in a black box together with a detector.
 Item emitting light is omitted.
 
 ### NIM
 
-![NIM](nim.png "NIM IO ports and jumper pins."){: #NIM width="60%"}
+![NIM](dummy.png "NIM IO ports and jumper pins."){: #NIM width="60%"}
 
 Two LEMO connectors are assigned for NIM I/O, but two logic input lines and two logic output lines are assigned on the FPGA.
 The signal path arrangement is determined by the jumper pins shown in the orange box in the [figure](#NIM).
@@ -140,10 +134,10 @@ Please see the [AMANEQ user guide](https://spadi-alliance.github.io/ug-amaneq/ha
 
 ## Power supply ICs
 
-![1V0D](1V0D.png "1.0V power IC"){: #1V0D"}
+![1V0D](dummy.png "1.0V power IC"){: #1V0D"}
 
 The external DC voltage supply of 35V
-CIRASAME uses the LT8612UDE to step down the external input of 35V to 5V, and then further steps it down to multiple power supply voltages.
+RAYRAW uses the LT8612UDE to step down the external input of 35V to 5V, and then further steps it down to multiple power supply voltages.
 A test pint are located near by each power supply IC as shown in the [figure](#1V0D).
 Please confirm that every output voltage is correct after board delivery.
 
