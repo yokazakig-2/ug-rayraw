@@ -1,29 +1,29 @@
-# CIRASAME board
+# RAYRAW-v1
 
-CIRASAME (CITIROC based multi-MPPC readout electronics for continuous timing measurement) is a readout board for multi-MPPCs using [CITIROC 1A](https://www.caen.it/products/citiroc-1a/) ASICs.
-This is dedicated electronics to readout scintillating fiber trackers for the J-PARC E50 experiment, and is designed as an on-detector type electronics to be attached to those detectors.
-But, it can readout others detectors equipped with MPPCs.
-This board design is sophisticated for implementing a streaming readout TDC since the J-PARC E50 experiment uses a trigger-less data-streaming type DAQ system.
+The RAYRAW version 1 is a general purpose SiPM readout electronics using YAENAMI ASICs.
+The board was designed to evaluate the YAENAMI ASICs, but this has enough functionaries to be used in a physics experiment.
 
 - Manufacturer: 有限会社ジー・エヌ・ディー
-- Product No: GN-2107-3
+- Product No: GN-2226-1
 
-The [figure](#CIRASAME-PIC) shows the photograph of the CIRASAME board.
-CIRASAME is a 128 mm x 200 mm sized readout board with connectors on the back of the board for mounting an MPPC.
-The MPPC connector position is designed to mount HAMAMATSU S14826(ES1), which is special order product.
-See the MPPC section for information on MPPC and ASIC channel mapping.
-CIRASAME has a SFP+ port for a data link, a JTAG port, NIM IO, analog output ports, a MIKUMARI port for clock synchronization, and a power connector.
+The [figure](#RAYRAW-PIC) shows the photograph of the RAYRAW-v1 board.
+In this section, the author calls the RAYRAW-v1 as RAYRAW.
+This is a 140 mm x 200 mm sized readout board with a SiPM input connector (HIROSE FX2B-68PA-1.27DSL(71)).
+The connection between the input connector and ASICs is described in the [SiPM input sub-section](#sipm-input).
+RAYRAW has a SFP+ port for a data link, a JTAG port, NIM IO, test input port, bias supply port, a MIKUMARI port for clock synchronization, and a power connector.
+In addition, an multiplexed analog output from each ASIC can be monitored via through holes near by the ASIC.
+The comparator (discriminator) parallel outputs are once fed into an FPGA, and then the copy of those signals are output from the "Comparator outputs" connector.
 The FPGA mounted on the board is AMD Xilinx Kintex-7 FPGA (XC7K-160T-2FFG676C), which is the same as that of AMANEQ.
-This board has the same a jitter (CDCE62002) and 2Gb DDR3-SDRAM as those on AMANEQ.
-Thus, the digital part of CIRASAME is based on the design of AMANEQ, it uses many same ICs.
-CIRASAME also has dedicated functionalities for operating MPPCs, i.e., an APD bias supply IC (MAX19232ETC+T).
-Please also see the [AMANEQ user guide](https://spadi-alliance.github.io/ug-amaneq/).
+This board has the same a jitter (CDCE62002) as that on AMANEQ.
+Thus, the digital part of RAYRAW is based on the design of AMANEQ, it uses many same ICs.
+RAYRAW also has dedicated functionalities for operating SiPMs, i.e., an APD bias supply IC (MAX19232ETC+T).
+Please also see the [AMANEQ user guide](https://spadi-alliance.github.io/ug-amaneq/) and the [CIRASAME user guide](https://spadi-alliance.github.io/ug-cirasame/).
 
-![CIRASAME-PIC](pic-cirasame.png "Picture of CIRASAME GN-2107-3"){: #CIRASAME-PIC width="80%"}
+![RAYRAW-PIC](pic-cirasame.png "Picture of RAYRAW-v1 GN-2226-1"){: #RAYRAW-PIC width="80%"}
 
 The specification is summarized as follows.
 
-- Size: 128 mm (H) x 200 mm (V)
+- Size: 140 mm (H) x 200 mm (V)
 - Num of MPPCs: 2 (S14826(ES1) x2)
     - 128ch in total
     - If you prepare an intermediate board changing a connector type, other types of MPPCs can be read.
@@ -73,7 +73,7 @@ In the [figure](#CITIROC-BLOCK), the ASIC control lines from the FPGA are omitte
 
 ## Board interface
 
-### MPPC connector
+### SiPM input
 
 ![MPPC-CN](mppc-connector.png "Dimension drawing viewed from the solder side."){: #MPPC-CN width="80%"}
 
