@@ -1,0 +1,51 @@
+site_name: RAYRAW User Guide
+site_description: RAYRAW User Guide
+site_author: 'SPADI-A WG1 YAENAMI-RAYRAW TF'
+repo_url: https://github.com/spadi-alliance/ug-rayraw
+repo_name: ug-rayraw
+
+theme:
+  name: material
+  features:
+    - toc.integrate
+    - navigation.tabs
+  palette:
+    #scheme: slate
+    scheme: default
+    primary: amber
+
+markdown_extensions:
+  - attr_list
+  - def_list
+  - markdown_katex:
+      no_inline_svg: true
+      insert_fonts_css: true
+#  - hbfm.inline_coloring
+#  - hbfm.inline_list
+#  - toc:
+#      slugify: !!python/name:hbfm.toc.slugify
+  #- hbfm.number_headers
+  #- hbfm.quote_uri_hash
+  - image_captions:
+      numbering: true
+  - caption:
+      numbering: true
+
+extra_css:
+  - css/custom.css
+
+site_name: RAYRAW User Guide
+site_author: YAENAMI-RAYRAW task force members
+copyright: SPADI-A
+
+nav:
+  - Top: index.md
+  - Release: release/release.md
+  - ASIC: asic/yaenami.md
+  - Hardware:
+      RAYRAW-V1: hardware/rayraw-v1/rayraw-v1.md
+  - Firmware:
+      TRG-ADC-TDC: firmware/trg-adc-tdc/trg-adc-tdc.md
+  - Software: software/software.md
+  - Practical usage: practical/practical.md
+
