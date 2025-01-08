@@ -253,8 +253,8 @@ Please confirm that every output voltage is correct after board delivery.
   </tr>
     </tr>
     <tr>
-    <td class="tcenter">VCCAD</td>
-    <td class="tcenter">+1.8V</td>
+    <td class="tcenter">+1V2A</td>
+    <td class="tcenter">+1.2V</td>
     <td class="tcenter">U30</td>
     <td class="tcenter">TP18</td>
   </tr>
