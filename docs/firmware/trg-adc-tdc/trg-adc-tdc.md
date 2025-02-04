@@ -1,17 +1,5 @@
 # Triggered-type ADC Multi-Hit TDC
 
-## Overview
-
-RAYRAWファームウェアの全体構造を[下図](#RAYRAW-FIRMWARE)に示す。
-四角で囲まれた文字はファームウェアのコンポーネントを示し、コンポーネントと矢印で繋がっている囲いのない文字はハードウェアを表す。
-
-![RAYRAW-FIRMWARE](rayraw-firmware-fig-v3.png "RAYRAW firmware structure (toplevel.vhd)"){: #RAYRAW-FIRMWARE width="90%"}
-
-ジッタークリーナーIC (CDCE62002)、フラッシュメモリ、[SiTCP](https://www.sitcp.net/doc/SiTCP.pdf)などはAMANEQと同一である。
-また、BCTの説明は[Hadron Universal Logic module 仕様書 兼 ユーザーガイド](https://indico2.riken.jp/event/3343/sessions/1398/attachments/9417/13035/HUL_UserGuide.pdf)にある。
-そこで、このページではADC、TDC、トリガー管理モジュール (TRM) に的を絞って説明を行う。
-RAYRAWは外部トリガーとセルフトリガーを持っており、外部トリガーはNIM信号入力がある場合にIOMを通じて、セルフトリガーはADCデータがある際にEVBを通じて発行される。
-
 ## Multi-Hit TDC (MTDC)
 
 ### Outline
