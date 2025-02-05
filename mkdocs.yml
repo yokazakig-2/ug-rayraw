@@ -45,6 +45,7 @@ nav:
   - Hardware:
       RAYRAW-V1: hardware/rayraw-v1/rayraw-v1.md
   - Firmware:
+      Overview: firmware/overview/overview.md
       TRG-ADC-TDC: firmware/trg-adc-tdc/trg-adc-tdc.md
   - Software: software/software.md
   - Practical usage: practical/practical.md
