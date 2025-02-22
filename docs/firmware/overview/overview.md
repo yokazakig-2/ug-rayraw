@@ -7,8 +7,8 @@ RAYRAWファームウェアの基本構造を[下図](#RAYRAW-FIRMWARE)に示す
 前者はスローコントロールと呼ばれ、各モジュールとの信号の送受信はLocal Busを通して、Local Bus Controller (BCT) により制御される。
 データ取得はTrigger Manager (TRM) が発行するトリガーを機に始まり、ADCおよびMulti-Hit TDC (MTDC) で記録された信号がBuilder Busを通じてEvent Builder (EVB) によって集約され、1イベント分のデータが組み立てられる。
 トリガーの発行はDAQ Controller (DCT) から送られるDAQ gateの値が1である場合に限り可能で、0になると停止する。
-2025年2月時点でファームウェアのシステムクロックは100 MHzであるため、データ取得時のTime WindowのLSB精度は10 nsである。
-また、TDCのサンプリングに用いられるクロックは400 MHz×4相の実質1.6 GHzであるので、時間測定はLSB精度0.625 nsで行われる。
+2025年2月時点でファームウェアのシステムクロックは75 MHzであるため、データ取得時のTime WindowのLSB精度は10 nsである。
+また、TDCのサンプリングに用いられるクロックは300 MHz×4相の実質1.2 GHzであるので、時間測定はLSB精度0.833 nsで行われる。
 
 ![RAYRAW-FIRMWARE](rayraw-firmware-fig-v3.png "RAYRAW firmware structure (toplevel.vhd)"){: #RAYRAW-FIRMWARE width="90%"}
 
@@ -56,11 +56,11 @@ Module IDとLocal Bus Moduleとの対応は以下の通り。
 |StartCycle|0x300|W|1|SPI通信の送信サイクル (FPGA→YAENAMI) を開始する|
 |ChipSelect|0x400|W|4|4つのASICのどれにデータを送るかを選択する (複数可)|
 
-### DAQ Controller (DCT)
+### Trigger Manager (TRM)
 |レジスタ名|Local Address|読み書き|ビット長|機能・備考|
 |:----|:----:|:----:|:----:|:----|
-|DaqGate|0x000|W/R|1|DAQ gateのON/OFF (TRMのトリガー出力の有効化/無効化)|
-|ResetEvb|0x010|W|1|EVB内のEventBuffer (FIFO) のリセット信号|
+|SelectTrigger[7:0]|0x000|W/R|8|トリガーソースの選択|
+|SelectTrigger[11:8]|0x001|W/R|4|トリガーソースの選択|
 
 ### TDC
 |レジスタ名|Local Address|読み書き|ビット長|機能・備考|
