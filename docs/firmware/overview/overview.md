@@ -56,11 +56,11 @@ Module IDとLocal Bus Moduleとの対応は以下の通り。
 |StartCycle|0x300|W|1|SPI通信の送信サイクル (FPGA→YAENAMI) を開始する|
 |ChipSelect|0x400|W|4|4つのASICのどれにデータを送るかを選択する (複数可)|
 
-### Trigger Manager (TRM)
+### DAQ Controller (DCT)
 |レジスタ名|Local Address|読み書き|ビット長|機能・備考|
 |:----|:----:|:----:|:----:|:----|
-|SelectTrigger[7:0]|0x000|W/R|8|トリガーソースの選択|
-|SelectTrigger[11:8]|0x001|W/R|4|トリガーソースの選択|
+|DaqGate|0x000|W/R|1|DAQ gateのON/OFF (TRMのトリガー出力の有効化/無効化)|
+|ResetEvb|0x010|W|1|EVB内のEventBuffer (FIFO) のリセット信号|
 
 ### TDC
 |レジスタ名|Local Address|読み書き|ビット長|機能・備考|
