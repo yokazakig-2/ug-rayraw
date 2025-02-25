@@ -7,7 +7,7 @@ RAYRAWファームウェアの基本構造を[下図](#RAYRAW-FIRMWARE)に示す
 前者はスローコントロールと呼ばれ、各モジュールとの信号の送受信はLocal Busを通して、Local Bus Controller (BCT) により制御される。
 データ取得はTrigger Manager (TRM) が発行するトリガーを機に始まり、ADCおよびMulti-Hit TDC (MTDC) で記録された信号がBuilder Busを通じてEvent Builder (EVB) によって集約され、1イベント分のデータが組み立てられる。
 トリガーの発行はDAQ Controller (DCT) から送られるDAQ gateの値が1である場合に限り可能で、0になると停止する。
-2025年2月時点でファームウェアのシステムクロックは75 MHzであるため、データ取得時のTime WindowのLSB精度は10 nsである。
+2025年2月時点でファームウェアのシステムクロックは75 MHzであるため、データ取得時のTime WindowのLSB精度は13.3 nsである。
 また、TDCのサンプリングに用いられるクロックは300 MHz×4相の実質1.2 GHzであるので、時間測定はLSB精度0.833 nsで行われる。
 
 ![RAYRAW-FIRMWARE](rayraw-firmware-fig-v3.png "RAYRAW firmware structure (toplevel.vhd)"){: #RAYRAW-FIRMWARE width="90%"}
@@ -62,6 +62,8 @@ Module IDとLocal Bus Moduleとの対応は以下の通り。
 |DaqGate|0x000|W/R|1|DAQ gateのON/OFF (TRMのトリガー出力の有効化/無効化)|
 |ResetEvb|0x010|W|1|EVB内のEventBuffer (FIFO) のリセット信号|
 
+DaqGateはマニュアルで有効化/無効化することもできるが、[rayraw-soft](https://github.com/spadi-alliance/rayraw-soft)を用いて取得したいイベント数を指定し、ソフトウェアによって自動的に有効化/無効化することを推奨する ([Software](../../software/software.md)の項目も参照)。
+
 ### TDC
 |レジスタ名|Local Address|読み書き|ビット長|機能・備考|
 |:----|:----:|:----:|:----:|:----|
@@ -97,6 +99,7 @@ HULのものを流用しているが、入出力ポートの数がHULと異な�
 |0xE|0|Lowを出力|
 
 また、`ExtL1, ExtL2, ExtClr, ExtBusy` (表中`Ext*`とする) の値に応じて以下の入力ポートが対応する内部信号線に割り当てられる。
+ただしExtBusyはどこにも繋がっていないため、外からVeto信号を入力したとしてもRAYRAWではTriggerを止めることはできない。そのため、RAYRAWに入力するNIM信号自体にVetoをかけなければならない。
 
 |Ext*の値|NIM入力ポート|
 |:----:|:----:|
