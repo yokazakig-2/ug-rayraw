@@ -4,7 +4,7 @@
 
 ### Outline
 
-RAYRAWに実装されているTDCファームウェアは、Common Stopが発行されたタイミングからTime Window分だけさかのぼった時間内にあるヒットの立ち上がり・立ち下がり時刻を 1 LSB = 0.625 ns の時間分解能でそれぞれ（32ch合計で）最大16個記録する、Multi-Hit TDCである（[下図](#RAYRAW-TDC-CONCEPT)参照）。
+RAYRAWに実装されているTDCファームウェアは、Common Stopが発行されたタイミングからTime Window分だけさかのぼった時間内にあるヒットの立ち上がり・立ち下がり時刻を 1 LSB = 0.833 ns の時間分解能でそれぞれ（32chそれぞれで）最大16個記録する、Multi-Hit TDCである（[下図](#RAYRAW-TDC-CONCEPT)参照）。
 
 ![RAYRAW-TDC-CONCEPT](rayraw-tdc-data.png "Concept of MTDC"){: #RAYRAW-TDC-CONCEPT width="50%"}
 
@@ -14,13 +14,13 @@ MTDCブロックの構造は[下図](#RAYRAW-MTDC)に示す通りである。
 
 各々のコンポーネントは以下の働きを持つ:
 
-- CommonStop: TRMからのL1accept入力の時刻を0.625 nsの時間分解能で測定し、5ビットのcstopを出力する。cstopのMSBはL1acceptの有無を、下位4ビットは 0.625 ns の細かい分解能を持つ時間情報を示す。
-- TDCBlock (Leading): YAENAMIからの32ch Discri入力の立ち上がり時刻を 0.625 ns の細かい分解能で保持し、cstopが入力されたタイミングで粗い時間情報と組み合わせてEVBへとデータを送信する。また、処理の途中にはbusy信号をTRMへと送る。
+- CommonStop: TRMからのL1accept入力の時刻を0.833 nsの時間分解能で測定し、5ビットのcstopを出力する。cstopのMSBはL1acceptの有無を、下位4ビットは 0.833 ns の細かい分解能を持つ時間情報を示す。
+- TDCBlock (Leading): YAENAMIからの32ch Discri入力の立ち上がり時刻を 0.833 ns の細かい分解能で保持し、cstopが入力されたタイミングで粗い時間情報と組み合わせてEVBへとデータを送信する。また、処理の途中にはbusy信号をTRMへと送る。
 - TDCBlock (Trailing): Discri入力の立ち下がり時刻を記録する。TDCBlock (Leading)と同一の構造を持つが、入力信号を反転させることで、立ち下がり時刻の測定を行っている。
 
 ### Fine TDC measurement (Multi-phase TDC)
 
-0.625 nsで細かい時間情報を記録する部分はCommonStopとTDCBlockとで共通であり、[図](#RAYRAW-MTDC)ではFineCount Partとした。
+0.833 nsで細かい時間情報を記録する部分はCommonStopとTDCBlockとで共通であり、[図](#RAYRAW-MTDC)ではFineCount Partとした。
 このFineCount Partの実装を[下図](#RAYRAW-FINECOUNT)に示す。
 
 ![RAYRAW-FINECOUNT](rayraw-finecount.png "FineCount Part"){: #RAYRAW-FINECOUNT width="70%"}
@@ -31,11 +31,11 @@ MTDCブロックの構造は[下図](#RAYRAW-MTDC)に示す通りである。
 -->
 
 
-- FirstFDCEs: Discri入力を4つの異なる位相 (0°,90°,180°, 270°) を持つ400MHzのクロック (4相クロック) でラッチする。これは後段でのメタステーブル状態を回避するための措置である。
-- FineCounter: 前段の4つの出力を各々対応する4相クロックで再度ラッチした後、クロックドメインを統一するため位相0°で4つの入力をラッチする。位相0°と位相270°のクロックは立ち上がり時刻の差が0.625 nsしかなくFPGAの配線遅延の影響を受けるため、最初位相270°のクロックでラッチしたデータは他の位相のクロックでラッチしたデータと比べて1クロック遅れて後段に届く。そこで、これらのラッチされたデータのうち、初段において位相0°,90°,180°のクロックでラッチされていたデータを1クロックだけ遅らせる。
-- FineCounterDecoder: 前段にて、システムクロック1周期につき4-bitsのデータが400MHzのクロックドメインで得られたが、次はこれをシステムクロックに同期させる必要がある。TDC用クロック(400MHz)/システムクロック(100MHz)=4段のフリップフロップがあれば、TDCクロック4周期の間に4段×4ビット=16ビットのデータを保持することができる。これをシステムクロックの立ち上がりのタイミングでラッチすることにより、クロックドメインをシステムクロックに移すことができる。出力のfine countは4ビットで、上位2ビットがsemi-fine count (4段のどこにヒットがあったか)、下位2ビットがfine count (4つのクロックのどこにヒットがあったか)という情報を持っている ([下図](#RAYRAW-FINESEMIFINE)参照)。
+- FirstFDCEs: Discri入力を4つの異なる位相 (0°,90°,180°, 270°) を持つ300 MHzのクロック (4相クロック) でラッチする。これは後段でのメタステーブル状態を回避するための措置である。
+- FineCounter: 前段の4つの出力を各々対応する4相クロックで再度ラッチした後、クロックドメインを統一するため位相0°で4つの入力をラッチする。位相0°と位相270°のクロックは立ち上がり時刻の差が0.833 nsしかなくFPGAの配線遅延の影響を受けるため、最初位相270°のクロックでラッチしたデータは他の位相のクロックでラッチしたデータと比べて1クロック遅れて後段に届く。そこで、これらのラッチされたデータのうち、初段において位相0°,90°,180°のクロックでラッチされていたデータを1クロックだけ遅らせる。
+- FineCounterDecoder: 前段にて、システムクロック1周期につき4-bitsのデータが300 MHzのクロックドメインで得られたが、次はこれをシステムクロックに同期させる必要がある。TDC用クロック(300 MHz)/システムクロック(75 MHz)=4段のフリップフロップがあれば、TDCクロック4周期の間に4段×4ビット=16ビットのデータを保持することができる。これをシステムクロックの立ち上がりのタイミングでラッチすることにより、クロックドメインをシステムクロックに移すことができる。出力のfine countは4ビットで、上位2ビットがsemi-fine count (4段のどこにヒットがあったか)、下位2ビットがfine count (4つのクロックのどこにヒットがあったか)という情報を持っている ([下図](#RAYRAW-FINESEMIFINE)参照)。
 
-出力hit_foundおよびfine_count[3:0]はそれぞれ1システムクロック内での信号の立ち上がりの有無と、その際の0.625 nsの精度での時間情報を表す。
+出力hit_foundおよびfine_count[3:0]はそれぞれ1システムクロック内での信号の立ち上がりの有無と、その際の0.833 nsの精度での時間情報を表す。
 
 ![RAYRAW-FINESEMIFINE](rayraw-fine-semifine.png "How FineCount Part works"){: #RAYRAW-FINESEMIFINE width="60%"}
 
@@ -55,7 +55,7 @@ TDC = (coarse_counter[10:0] & std_logic_vector(to_unsigned(0, 4))) - fine_count[
 ```
 
 を対応するチャンネルのChannelBufferに書き込む。
-これは上位11ビットが100 MHzクロックで測られた粗い時間情報を、下位4ビットが位相が90°ずつ異なる400 MHzクロックで測られた細かい時間情報を持つ計15ビットのデータである。
+これは上位11ビットが75 MHzクロックで測られた粗い時間情報を、下位4ビットが位相が90°ずつ異なる300 MHzクロックで測られた細かい時間情報を持つ計15ビットのデータである。
 実際には15ビットのTDCに加え、最上位ビットにdata_bitを付与する。
 このdata_bitにはデータ読み出し時には値1(データ)、リングバッファの走査終了時には値0(イベント区切り)が詰められる。
 ChannelBuffer内のTDCは、後段のFIFOやデータ転送に滞りのない限り順次Build Processにより
@@ -137,3 +137,6 @@ These serial inputs are read out in the RayrawAdcRO block so that they are synch
 
 
 ## TRM
+
+データ取得のトリガーはTDCのモジュール内で作られるCommon Stopであり、Common StopはIOMで指定したExtL1から作られる。
+デフォルトの設定では、TRMのSelectTrigger[0]を"1"にし、DCTのDaqGateを"1"にした状態で、ExtL1(NIMIN1)にHの信号を送ることでデータを取得することができる。
