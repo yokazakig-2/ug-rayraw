@@ -4,7 +4,7 @@
 
 ### Outline
 
-RAYRAWに実装されているTDCファームウェアは、Common Stopが発行されたタイミングからTime Window分だけさかのぼった時間内にあるヒットの立ち上がり・立ち下がり時刻を 1 LSB = 0.833 ns の時間分解能でそれぞれ（32ch合計で）最大16個記録する、Multi-Hit TDCである（[下図](#RAYRAW-TDC-CONCEPT)参照）。
+RAYRAWに実装されているTDCファームウェアは、Common Stopが発行されたタイミングからTime Window分だけさかのぼった時間内にあるヒットの立ち上がり・立ち下がり時刻を 1 LSB = 0.833 ns の時間分解能でそれぞれ（32chそれぞれで）最大16個記録する、Multi-Hit TDCである（[下図](#RAYRAW-TDC-CONCEPT)参照）。
 
 ![RAYRAW-TDC-CONCEPT](rayraw-tdc-data.png "Concept of MTDC"){: #RAYRAW-TDC-CONCEPT width="50%"}
 
