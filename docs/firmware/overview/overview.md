@@ -41,7 +41,7 @@ Module IDとLocal Bus Moduleとの対応は以下の通り。
 |0x4|I/O Manager (IOM)|
 |0x5|ADC|
 |0x9|MAX1932 Controller (APD)|
-|0xB|CDCD62002 Controller (C6C)|
+|0xB|CDCE62002 Controller (C6C)|
 |0xC|Self Diagnosis System (SDS)|
 |0xD|Flash Memory Programmer (FMP)|
 |0xE|Local Bus Controller (BCT)|
@@ -164,3 +164,30 @@ Header 2内の`overflow`は1イベント中にTDCでカウントできる最大�
 15ビットTDCデータの上位11ビットはシステムクロック単位で測られる粗い時間情報 (coarse TDC) であり、ADCはこのcoarse TDCを通じてより細い時間分解能を持つTDCデータと紐付けられる。
 
 なお、上のブロック中の`enRM`および`trigger tag`は、HULにおいてExt/J0/RMのどのトリガーでデータ取得をしたかを識別するために用いられていたが、RAYRAWにおいては常に値0となる。
+
+## RAYRAW上のスイッチ・LEDの機能
+
+### SW1の機能
+
+|スイッチ番号|機能|詳細|
+|:----:|:----:|:---|
+|1||not used|
+|2|SiTCP force default|OFFでSiTCPのデフォルトモードで起動します。電源投入前に設定している必要があります。|
+|3|C6C reset|Jitter Cleaner (CDCE62002)のHardware Resetです。|
+|4||not used|
+|5||not used|
+|6||not used|
+|7||not used|
+|8||not used|
+
+### SW2
+
+全てのモジュールをリセットするためのHardware Reset。
+
+### LED
+|番号|備考|
+|:----:|:----|
+|1|点灯中はTCP接続が張られています。|
+|2|RAYRAWがBUSY信号を出しています。|
+|3|TDCやADCに用いるCoarse、Fine Clockを作るMMCMがロックしています。|
+|4|Jitter Cleaner (CDCE62002)がロックしています。|
