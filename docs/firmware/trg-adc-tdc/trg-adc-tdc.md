@@ -140,3 +140,15 @@ These serial inputs are read out in the RayrawAdcRO block so that they are synch
 
 データ取得のトリガーはTDCのモジュール内で作られるCommon Stopであり、Common StopはIOMで指定したExtL1から作られる。
 デフォルトの設定では、TRMのSelectTrigger[0]を"1"にし、DCTのDaqGateを"1"にした状態で、ExtL1(NIMIN1)にHの信号を送ることでデータを取得することができる。
+
+### BUSYとなるタイミング
+BUSY信号(module busy)を内部で作って、NIMOUTに出力できるようになっている。
+ただしNIMINにBUSYとして入力させてもFirmware内では使われていないので、Triggerを出すNIMモジュールなどにVeto信号として用いることを推奨する。
+BUSY信号は以下の信号のORとなっている。
+
+|種類|長さ|備考|
+|:----:|:----:|:----|
+|Self Busy|200 ns|L1 triggerを検出した瞬間から固定長でアサート。|
+|Sequence Busy||ADC、TDCのBufferやFIFOがFullになるとアサートされます。また、Common Stopを発行してから設定したTime Window分のRing Buffer内のデータ読み出しが終わるまでアサートされます。|
+|FIFO Busy||使われていない。|
+
