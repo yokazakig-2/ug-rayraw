@@ -1,0 +1,1398 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="RAYRAW User Guide">
+      
+      
+        <meta name="author" content="YAENAMI-RAYRAW task force members">
+      
+      
+      
+        <link rel="prev" href="../../../asic/yaenami/">
+      
+      
+        <link rel="next" href="../../../firmware/overview/overview/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>RAYRAW-V1 - RAYRAW User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rayraw-v1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="RAYRAW User Guide" class="md-header__button md-logo" aria-label="RAYRAW User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RAYRAW User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RAYRAW-V1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/spadi-alliance/ug-rayraw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ug-rayraw
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Top
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../release/release/" class="md-tabs__link">
+        
+  
+    
+  
+  Release
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../asic/yaenami/" class="md-tabs__link">
+        
+  
+    
+  
+  ASIC
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../firmware/overview/overview/" class="md-tabs__link">
+          
+  
+  Firmware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../software/software/" class="md-tabs__link">
+        
+  
+    
+  
+  Software
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../practical/practical/" class="md-tabs__link">
+        
+  
+    
+  
+  Practical usage
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="RAYRAW User Guide" class="md-nav__button md-logo" aria-label="RAYRAW User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RAYRAW User Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/spadi-alliance/ug-rayraw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ug-rayraw
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Top
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../release/release/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../asic/yaenami/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASIC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Hardware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RAYRAW-V1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    RAYRAW-V1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#board-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Board interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Board interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sipm-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      SiPM input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mppc-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      MPPC bias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analog-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analog monitor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sfp-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SFP-1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dip" class="md-nav__link">
+    <span class="md-ellipsis">
+      DIP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nim" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power supply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mikumari-port-sfp-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      MIKUMARI port (SFP-2)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#board-ics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Board ICs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-supply-ics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power supply ICs
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Firmware
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Firmware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../firmware/overview/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../firmware/trg-adc-tdc/trg-adc-tdc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRG-ADC-TDC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../practical/practical/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practical usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="rayraw-v1">RAYRAW-v1</h1>
+<p>The RAYRAW version 1 is a general purpose SiPM readout electronics using YAENAMI ASICs.
+The board was designed to evaluate the YAENAMI ASICs, but this has enough functionaries to be used in a physics experiment.</p>
+<ul>
+<li>Manufacturer: 有限会社ジー・エヌ・ディー</li>
+<li>Product No: GN-2226-1</li>
+</ul>
+<p>The <a href="#RAYRAW-PIC">figure</a> shows the photograph of the RAYRAW-v1 board.
+In this section, the author calls the RAYRAW-v1 as RAYRAW.
+This is a 140 mm x 200 mm sized readout board with a SiPM input connector (HIROSE FX2B-68PA-1.27DSL(71)).
+The connection between the input connector and ASICs is described in the <a href="#sipm-input">SiPM input sub-section</a>.
+RAYRAW has a SFP+ port for a data link, a JTAG port, NIM IO, test input port, bias supply port, a MIKUMARI port for clock synchronization, and a power connector.
+In addition, an multiplexed analog output from each ASIC can be monitored via through holes near by the ASIC.
+The comparator (discriminator) parallel outputs from YAENAMIs are once fed into an FPGA, and then the copy of those signals are output from the "Comparator outputs" connector.
+The FPGA mounted on the board is AMD Xilinx Kintex-7 FPGA (XC7K-160T-2FFG676C), which is the same as that of AMANEQ.
+This board has the same a jitter (CDCE62002) as that on AMANEQ.
+Thus, the digital part of RAYRAW is based on the design of AMANEQ, it uses many same ICs.
+RAYRAW also has dedicated functionalities for operating SiPMs, i.e., an APD bias supply IC (MAX19232ETC+T).
+Please also see the <a href="https://spadi-alliance.github.io/ug-amaneq/">AMANEQ user guide</a> and the <a href="https://spadi-alliance.github.io/ug-RAYRAW/">RAYRAW user guide</a>.</p>
+<figure id="_figure-1">
+<img alt="RAYRAW-PIC" id="RAYRAW-PIC" src="../pic-rayraw.png" width="80%" />
+<figcaption><span>Figure&nbsp;1:</span> Picture of RAYRAW-v1 GN-2226-1</figcaption>
+</figure>
+<p>The specification is summarized as follows.</p>
+<ul>
+<li>Size: 140 mm (H) x 200 mm (V)</li>
+<li>MPPC input<ul>
+<li>128ch in total</li>
+<li>Connector: FX2B-68PA-1.27DSL(71)</li>
+</ul>
+</li>
+<li>ASIC: KEK E-sys YAENAMI x4</li>
+<li>Bias: MAX1932ETC+T<ul>
+<li>Supply range: 40-70V (256 steps)</li>
+<li>Maximum output current: 2.5 mA</li>
+</ul>
+</li>
+<li>Test inpout<ul>
+<li>1.2 square wave input from a LEMO connector</li>
+</ul>
+</li>
+<li>Analog outputs:<ul>
+<li>Differential output from each ASIC</li>
+</ul>
+</li>
+<li>Parallel comparator (discriminator) outputs<ul>
+<li>KEL 8831E-068-170-F</li>
+<li>User can select ground position from K-type (KEK) and L-type (LeCroy). Default is K-type, and if you need an L-type RAYRAW, please specify it when ordering.</li>
+</ul>
+</li>
+<li>FPGA: AMD Xilinx XC7K-160T-2FFG676C</li>
+<li>Flash memory: CYPRESS S25FL128SAGMFIR01</li>
+<li>Data links: SFP+ (10 Gbps in maximum)<ul>
+<li>Link media depends on the type of SFP modules.</li>
+</ul>
+</li>
+<li>Clock synchronization: One MIKUMARI port (SFP)</li>
+<li>Num of NIM input: 2 (LEMO)</li>
+<li>Num of NIM output: 2 (LEMO)</li>
+<li>Power supply: 20-35V DC<ul>
+<li>Jack: 2.10mm ID, 5.50mm OD</li>
+<li>Main connector: 日本圧着端子 S2P-VH(LF)(SN)</li>
+<li><strong>Note that the connector is different from that on AMANEQ</strong></li>
+</ul>
+</li>
+<li>Fuse limit: 1A<ul>
+<li>Fuse product: Littelfuse 0251001.NRT1L</li>
+</ul>
+</li>
+<li>Num of DIP switch bits: 8</li>
+<li>Clock generator IC: TI CDCE62002</li>
+</ul>
+<figure id="_figure-2">
+<img alt="RAYRAW-BLOCK" id="RAYRAW-BLOCK" src="../rayraw-block.png" width="60%" />
+<figcaption><span>Figure&nbsp;2:</span> Block diagram of GN-2226-1</figcaption>
+</figure>
+<p>MPPCs are biased by the MAX1932 bias supply, which is controlled by FPGA.
+It can control output voltage with 256 steps between 40V to 70V.
+The MPPC signal lines are parallel terminated with 100 ohm registers together with 0.22 uF capacitances for DC blocking.
+The MPPC signals are fed into four YAENAMIs, and are amplified, shaped, and discriminated in YAENAMI.
+The shaped analog signal is digitized by ADC in YAENAMI, and the digitized data are transferred to FPGA channel by channel.
+For details of this YAENAMI, please see the ASIC section.
+The comparator (discriminator) outputs are also input in parallel to the FPGA.</p>
+<p>The YAENAMI is a free-run digitizer for a timing and a waveform; it continuously provides the waveform data and the comparator signals without any trigger signal.
+The board is designed to implement the streaming readout ADC and TDC functions, but if users implement a triggered-type DAC function in FPGA, it can work as the triggered-type ADC and TDC.
+The RAYRAW board equips the SFP port for synchronization, which is expected to be used for the MIKUMARI link protocol.</p>
+<h2 id="board-interface">Board interface</h2>
+<h3 id="sipm-input">SiPM input</h3>
+<figure id="_figure-3">
+<img alt="MPPC-CN" id="MPPC-CN" src="../MPPC-CN.png" width="90%" />
+<figcaption><span>Figure&nbsp;3:</span> Schematic drawing for the CN1, MPPC input connector.</figcaption>
+</figure>
+<p>The <a href="#MPPC-CN">figure</a> is the schematic drawing for the MPPC input connector (CN1).
+The electrodes under the position marker are assigned as A1 and B1.
+The connection between CN1 and FPGA is summarized as follows. Arrangement to the CN5 for which the comparator outputs is listed.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">CN1 (HIROSE)</th>
+<th style="text-align: center;">MPPC-IN-NET</th>
+<th style="text-align: center;">ASIC NUM</th>
+<th style="text-align: center;">ASIC IN</th>
+<th style="text-align: center;">FPGA IN</th>
+<th style="text-align: center;">CN5 (KEL pos side)</th>
+<th style="text-align: center;">CN5 (KEL neg side)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">B32</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">A3</td>
+<td style="text-align: center;">A4</td>
+</tr>
+<tr>
+<td style="text-align: center;">A32</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">A5</td>
+<td style="text-align: center;">A6</td>
+</tr>
+<tr>
+<td style="text-align: center;">B30</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">A7</td>
+<td style="text-align: center;">A8</td>
+</tr>
+<tr>
+<td style="text-align: center;">A30</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">A9</td>
+<td style="text-align: center;">A10</td>
+</tr>
+<tr>
+<td style="text-align: center;">B28</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">A11</td>
+<td style="text-align: center;">A12</td>
+</tr>
+<tr>
+<td style="text-align: center;">A28</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">A13</td>
+<td style="text-align: center;">A14</td>
+</tr>
+<tr>
+<td style="text-align: center;">B26</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">A15</td>
+<td style="text-align: center;">A16</td>
+</tr>
+<tr>
+<td style="text-align: center;">A26</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">A17</td>
+<td style="text-align: center;">A18</td>
+</tr>
+<tr>
+<td style="text-align: center;">B24</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">U17</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">A19</td>
+<td style="text-align: center;">A20</td>
+</tr>
+<tr>
+<td style="text-align: center;">A24</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">U17</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">A21</td>
+<td style="text-align: center;">A22</td>
+</tr>
+<tr>
+<td style="text-align: center;">B22</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">U17</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">A23</td>
+<td style="text-align: center;">A24</td>
+</tr>
+<tr>
+<td style="text-align: center;">A22</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">U17</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">A25</td>
+<td style="text-align: center;">A26</td>
+</tr>
+<tr>
+<td style="text-align: center;">B20</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">U17</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">A27</td>
+<td style="text-align: center;">A28</td>
+</tr>
+<tr>
+<td style="text-align: center;">A20</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">U17</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">A29</td>
+<td style="text-align: center;">A30</td>
+</tr>
+<tr>
+<td style="text-align: center;">B18</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">U17</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">A31</td>
+<td style="text-align: center;">A32</td>
+</tr>
+<tr>
+<td style="text-align: center;">A18</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">U17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">A33</td>
+<td style="text-align: center;">A34</td>
+</tr>
+<tr>
+<td style="text-align: center;">B16</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">U18</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">B3</td>
+<td style="text-align: center;">B4</td>
+</tr>
+<tr>
+<td style="text-align: center;">A16</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">U18</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">B5</td>
+<td style="text-align: center;">B6</td>
+</tr>
+<tr>
+<td style="text-align: center;">B14</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">U18</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">B7</td>
+<td style="text-align: center;">B8</td>
+</tr>
+<tr>
+<td style="text-align: center;">A14</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">U18</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">B9</td>
+<td style="text-align: center;">B10</td>
+</tr>
+<tr>
+<td style="text-align: center;">B12</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">U18</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">B11</td>
+<td style="text-align: center;">B12</td>
+</tr>
+<tr>
+<td style="text-align: center;">A12</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">U18</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">B13</td>
+<td style="text-align: center;">B14</td>
+</tr>
+<tr>
+<td style="text-align: center;">B10</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">U18</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">B15</td>
+<td style="text-align: center;">B16</td>
+</tr>
+<tr>
+<td style="text-align: center;">A10</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">U18</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">B17</td>
+<td style="text-align: center;">B18</td>
+</tr>
+<tr>
+<td style="text-align: center;">B08</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">U19</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">B19</td>
+<td style="text-align: center;">B20</td>
+</tr>
+<tr>
+<td style="text-align: center;">A08</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">U19</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">B21</td>
+<td style="text-align: center;">B22</td>
+</tr>
+<tr>
+<td style="text-align: center;">B06</td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">U19</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">B23</td>
+<td style="text-align: center;">B24</td>
+</tr>
+<tr>
+<td style="text-align: center;">A06</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">U19</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">B25</td>
+<td style="text-align: center;">B26</td>
+</tr>
+<tr>
+<td style="text-align: center;">B04</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">U19</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">B27</td>
+<td style="text-align: center;">B28</td>
+</tr>
+<tr>
+<td style="text-align: center;">A04</td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">U19</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">B29</td>
+<td style="text-align: center;">B30</td>
+</tr>
+<tr>
+<td style="text-align: center;">B02</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">U19</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">B31</td>
+<td style="text-align: center;">B32</td>
+</tr>
+<tr>
+<td style="text-align: center;">A02</td>
+<td style="text-align: center;">31</td>
+<td style="text-align: center;">U19</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">31</td>
+<td style="text-align: center;">B33</td>
+<td style="text-align: center;">B34</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mppc-bias">MPPC bias</h3>
+<figure id="_figure-4">
+<img alt="BIAS" id="BIAS" src="../bias-out.png" width="50%" />
+<figcaption><span>Figure&nbsp;4:</span> MPPC bias supply.</figcaption>
+</figure>
+<p>MAX1932 can output bias voltage between 40V-70V with 256 steps, and it is controllable by FPGA through the network.
+Bias voltage is output from the left side LEMO connector.</p>
+<p><strong>The maximum output current is 2.5 mA.</strong></p>
+<h3 id="test-input">Test input</h3>
+<p>The right side LEMO connector in the <a href="#BIAS">figure</a> is a test input.
+Please input 1.2V square wave with the pulse width longer than 1us, and thus a constant amount of charge injected to all the ASIC pre-amplifiers in ASIC at the square wave edges.
+As it is not possible to inject arbitral amount of charge, this test input cannot be used for the calibration.
+This input is common to all the ASICs.</p>
+<h3 id="analog-monitor">Analog monitor</h3>
+<p>An multiplexed analog output from each ASIC can be monitored via through holes near by the ASIC.
+Please specify the target channel by slow control.
+Please use a differential probe to read it. If you don't have it, please read a positive side using a passive probe.
+This analog monitor port cannot drive a 50 ohm termination.</p>
+<h3 id="sfp-1">SFP-1</h3>
+<p>The SFP-1 port is for a data link of which the speed is 10 Gbps in maximum.
+The SFP and SFP+ modules are applicable but the link speed depends on firmware.
+As this port is the same as that on AMANEQ, please also see the <a href="https://spadi-alliance.github.io/ug-amaneq/hardware/overview/overview/#sfp1-2">AMANEQ user guide</a>.</p>
+<h3 id="dip">DIP</h3>
+<figure id="_figure-5">
+<img alt="DIP" id="DIP" src="../dip.png" width="70%" />
+<figcaption><span>Figure&nbsp;5:</span> DIP switch</figcaption>
+</figure>
+<p>The DIP switch is set to the left side where "ON" is printed, a logic 0 is taken in the FPGA.
+The function of each bit depends on each firmware.</p>
+<h3 id="led">LED</h3>
+<figure id="_figure-6">
+<img alt="LED" id="LED" src="../led.png" width="70%" />
+<figcaption><span>Figure&nbsp;6:</span> LEDs</figcaption>
+</figure>
+<p>There is an LED indicating FPGA configuration done near by the FPGA.
+This LED lights up when the FPGA configuration is complete.
+There are other four LEDs.
+What the LED indicates depends on the firmware.</p>
+<h3 id="nim">NIM</h3>
+<p>The NIM output of RAYRAW uses a simplified method for converting to the NIM signal standard, and there are differences in the voltage recognized as logic-high among boards.
+For this reason, even if the NIM output is made with the same firmware, the signal width and timing may appear slightly different.
+It is not suitable for output of high-precision signals where timing is important.
+The two NIM1 and NIM2 are printed on the silk screen on the board.</p>
+<h3 id="power-supply">Power supply</h3>
+<p>The power supply connector is 日本圧着端子 S2P-VH(LF)(SN).
+There is a rule for power on/off process. Please see the <a href="https://spadi-alliance.github.io/ug-amaneq/hardware/overview/overview/#power-supply">AMANEQ user guide</a>.</p>
+<h3 id="mikumari-port-sfp-2">MIKUMARI port (SFP-2)</h3>
+<p>This is the same that of the AMANEQ. Please see the <a href="https://spadi-alliance.github.io/ug-amaneq/hardware/overview/overview/#mikumari-port">AMANEQ user guide</a>.</p>
+<h2 id="board-ics">Board ICs</h2>
+<p>The FPGA, the jitter cleaner IC, and the flash memory are the same those on AMANEQ.
+Please see the <a href="https://spadi-alliance.github.io/ug-amaneq/hardware/overview/overview/#power-supply-ics">AMANEQ user guide</a>.</p>
+<h2 id="power-supply-ics">Power supply ICs</h2>
+<figure id="_figure-7">
+<img alt="3V3D" id="3V3D" src="../3v3d.png" width="50%" />
+<figcaption><span>Figure&nbsp;7:</span> 3.3V power IC</figcaption>
+</figure>
+<p>The external DC voltage supply of 35V
+RAYRAW uses the LT8612UDE to step down the external input of 35V to 5V, and then further steps it down to multiple power supply voltages.
+A test pint are located near by each power supply IC as shown in the <a href="#3V3D">figure</a>.
+Please confirm that every output voltage is correct after board delivery.</p>
+<div align="center">
+<table class="vmgr-table">
+  <thead><tr>
+    <th class="nowrap"><span class="mgr-20">Silk print</span></th>
+    <th class="nowrap"><span class="mgr-20">Voltage</span></th>
+    <th class="nowrap"><span class="mgr-20">Parts number</span></th>
+    <th class="nowrap"><span class="mgr-20">Test pint number</span></th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <td class="tcenter">+5V</td>
+    <td class="tcenter">+5.0V</td>
+    <td class="tcenter">U38</td>
+    <td class="tcenter">Nothing</td>
+  </tr>
+  <tr>
+    <td class="tcenter">+3V3D</td>
+    <td class="tcenter">+3.3V</td>
+    <td class="tcenter">U34</td>
+    <td class="tcenter">TP21</td>
+  </tr>
+  <tr>
+    <td class="tcenter">+1V8D</td>
+    <td class="tcenter">+1.8V</td>
+    <td class="tcenter">U33</td>
+    <td class="tcenter">TP20</td>
+  </tr>
+  <tr>
+    <td class="tcenter">+1V0D</td>
+    <td class="tcenter">+1.0V</td>
+    <td class="tcenter">U32</td>
+    <td class="tcenter">TP19</td>
+  </tr>
+  <tr>
+    <td class="tcenter">+1V8GTX</td>
+    <td class="tcenter">+1.8V</td>
+    <td class="tcenter">U37</td>
+    <td class="tcenter">TP24</td>
+  </tr>
+  <tr>
+    <td class="tcenter">+1V2GTX</td>
+    <td class="tcenter">+1.2V</td>
+    <td class="tcenter">U35</td>
+    <td class="tcenter">TP23</td>
+  </tr>
+  <tr>
+    <td class="tcenter">+1V05GTX</td>
+    <td class="tcenter">+1.05V</td>
+    <td class="tcenter">U36</td>
+    <td class="tcenter">TP22</td>
+  </tr>
+  <tr>
+    <td class="tcenter">-3V3D</td>
+    <td class="tcenter">-3.0V</td>
+    <td class="tcenter">U7</td>
+    <td class="tcenter">Nothing</td>
+  </tr>
+    <tr>
+    <td class="tcenter">+3V3A</td>
+    <td class="tcenter">+3.3V</td>
+    <td class="tcenter">U31</td>
+    <td class="tcenter">TP17</td>
+  </tr>
+    </tr>
+    <tr>
+    <td class="tcenter">+1V2A</td>
+    <td class="tcenter">+1.2V</td>
+    <td class="tcenter">U30</td>
+    <td class="tcenter">TP18</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SPADI-A
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

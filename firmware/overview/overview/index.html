@@ -1,0 +1,1430 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="RAYRAW User Guide">
+      
+      
+        <meta name="author" content="YAENAMI-RAYRAW task force members">
+      
+      
+      
+        <link rel="prev" href="../../../hardware/rayraw-v1/rayraw-v1/">
+      
+      
+        <link rel="next" href="../../trg-adc-tdc/trg-adc-tdc/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Overview - RAYRAW User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="RAYRAW User Guide" class="md-header__button md-logo" aria-label="RAYRAW User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RAYRAW User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/spadi-alliance/ug-rayraw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ug-rayraw
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Top
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../release/release/" class="md-tabs__link">
+        
+  
+    
+  
+  Release
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../asic/yaenami/" class="md-tabs__link">
+        
+  
+    
+  
+  ASIC
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../hardware/rayraw-v1/rayraw-v1/" class="md-tabs__link">
+          
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Firmware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../software/software/" class="md-tabs__link">
+        
+  
+    
+  
+  Software
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../practical/practical/" class="md-tabs__link">
+        
+  
+    
+  
+  Practical usage
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="RAYRAW User Guide" class="md-nav__button md-logo" aria-label="RAYRAW User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RAYRAW User Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/spadi-alliance/ug-rayraw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ug-rayraw
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Top
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../release/release/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../asic/yaenami/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASIC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Hardware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/rayraw-v1/rayraw-v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RAYRAW-V1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Firmware
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Firmware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-bus-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Bus Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Bus Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yaenami-slow-control-ysc" class="md-nav__link">
+    <span class="md-ellipsis">
+      YAENAMI Slow Control (YSC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daq-controller-dct" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAQ Controller (DCT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      TDC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io-manager-iom" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O Manager (IOM)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ADC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max1932-controller-apd" class="md-nav__link">
+    <span class="md-ellipsis">
+      MAX1932 Controller (APD)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rayrawled" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAYRAW上のスイッチ・LEDの機能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RAYRAW上のスイッチ・LEDの機能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sw1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SW1の機能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sw2" class="md-nav__link">
+    <span class="md-ellipsis">
+      SW2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trg-adc-tdc/trg-adc-tdc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRG-ADC-TDC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../practical/practical/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practical usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="overview">Overview</h1>
+<p><a href="https://github.com/spadi-alliance/RAYRAW-FW">RAYRAWのファームウェア</a>は<a href="https://spadi-alliance.github.io/ug-amaneq/">AMANEQ</a>同様、<a href="https://hul-official.gitlab.io/hul-ug/">Hadron Universal Logic module (HUL)</a>を元にしている。
+RAYRAWファームウェアの基本構造を<a href="#RAYRAW-FIRMWARE">下図</a>に示す。
+四角で囲まれた文字はファームウェアモジュールを、モジュールと矢印で繋がっている囲いのない文字はハードウェアを表す。
+ファームウェアの監視・制御 (温度の読み出しや電圧調整など) およびデータ読み出しは<a href="https://www.sitcp.net/doc/SiTCP.pdf">SiTCP</a>を通じてPCから行われる。
+前者はスローコントロールと呼ばれ、各モジュールとの信号の送受信はLocal Busを通して、Local Bus Controller (BCT) により制御される。
+データ取得はTrigger Manager (TRM) が発行するトリガーを機に始まり、ADCおよびMulti-Hit TDC (MTDC) で記録された信号がBuilder Busを通じてEvent Builder (EVB) によって集約され、1イベント分のデータが組み立てられる。
+トリガーの発行はDAQ Controller (DCT) から送られるDAQ gateの値が1である場合に限り可能で、0になると停止する。
+2025年2月時点でファームウェアのシステムクロックは75 MHzであるため、データ取得時のTime WindowのLSB精度は13.3 nsである。
+また、TDCのサンプリングに用いられるクロックは300 MHz×4相の実質1.2 GHzであるので、時間測定はLSB精度0.833 nsで行われる。</p>
+<figure id="_figure-1">
+<img alt="RAYRAW-FIRMWARE" id="RAYRAW-FIRMWARE" src="../rayraw-firmware-fig-v3.png" width="90%" />
+<figcaption><span>Figure&nbsp;1:</span> RAYRAW firmware structure (toplevel.vhd)</figcaption>
+</figure>
+<h2 id="local-bus-modules">Local Bus Modules</h2>
+<p>AMANEQ同様、RAYRAWファームウェアではLocal Bus経由でアクセスできるモジュールのことをLocal Bus Moduleと呼ぶ。
+これらのうち、BCT、FMP、SDS、TRMについては<a href="https://hul-official.gitlab.io/hul-ug/">HUL User Guide</a>、C6Cについては<a href="https://spadi-alliance.github.io/ug-amaneq/">AMANEQ User Guide</a>に説明があるのでここでの説明は省く。
+ただし、TRMに関しては、HULと異なりRMおよびJ0 busが存在しないため、NIMINからの外部トリガー (Ext) に関連する箇所のみが意味を持つ。
+BCTやFMP等の制御はHULと共通であるため、HULのソフトウェアの基本ライブラリ<a href="https://github.com/spadi-alliance/hul-common-lib">hul-common-lib</a>により行われる一方、YAENAMI Slow Control (YSC) のようなRAYRAW固有の制御はhul-common-lib+<a href="https://github.com/spadi-alliance/rayraw-soft">rayraw-soft</a>により行われる (<a href="../../../software/software/">Software</a>の項目も参照) 。</p>
+<p>Local Busは32ビットアドレス空間を持ち、その構造は以下のようになっている：</p>
+<pre><code>| module ID (4-bits) | local address (12-bits) | reserved (16-bits) |
+</code></pre>
+<p>Module IDは各Local Bus Moduleを区別するために用いる。
+Local Addressはモジュール内部のアドレス値であり、レジスタや動作を指す。
+前者の場合、<code>Reserved</code>はレジスタに読み書きするデータを指すが、後者の場合、<code>Reserved</code>は意味を持たず指定されたアドレスに信号を送ること自体が動作開始の命令となる。</p>
+<p>以下の各節では、Module IDのリストを示した後、RAYRAW固有のLocal Bus Modulesとそのレジスタ・動作を列挙する。
+以下の表に出てくるレジスタ名は、実際にファームウェアのコード中で使用されている変数名ではなく、定義ファイル<code>def*.vhd</code>中でLocal Addressを格納するために用いられている定数（例えば<code>kRegName</code>）から先頭の<code>k</code>を除いたもの (<code>RegName</code>) である。</p>
+<h3 id="module-id">Module ID</h3>
+<p>Module IDとLocal Bus Moduleとの対応は以下の通り。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Module ID</th>
+<th style="text-align: left;">Local Bus Module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0x0</td>
+<td style="text-align: left;">YAENAMI Slow Control (YSC)</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x1</td>
+<td style="text-align: left;">Trigger Manager (TRM)</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x2</td>
+<td style="text-align: left;">DAQ Controller (DCT)</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x3</td>
+<td style="text-align: left;">TDC</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x4</td>
+<td style="text-align: left;">I/O Manager (IOM)</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x5</td>
+<td style="text-align: left;">ADC</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x9</td>
+<td style="text-align: left;">MAX1932 Controller (APD)</td>
+</tr>
+<tr>
+<td style="text-align: center;">0xB</td>
+<td style="text-align: left;">CDCE62002 Controller (C6C)</td>
+</tr>
+<tr>
+<td style="text-align: center;">0xC</td>
+<td style="text-align: left;">Self Diagnosis System (SDS)</td>
+</tr>
+<tr>
+<td style="text-align: center;">0xD</td>
+<td style="text-align: left;">Flash Memory Programmer (FMP)</td>
+</tr>
+<tr>
+<td style="text-align: center;">0xE</td>
+<td style="text-align: left;">Local Bus Controller (BCT)</td>
+</tr>
+<tr>
+<td style="text-align: center;">0xF</td>
+<td style="text-align: left;">SiTCP予約領域</td>
+</tr>
+</tbody>
+</table>
+<h3 id="yaenami-slow-control-ysc">YAENAMI Slow Control (YSC)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">レジスタ名</th>
+<th style="text-align: center;">Local Address</th>
+<th style="text-align: center;">読み書き</th>
+<th style="text-align: center;">ビット長</th>
+<th style="text-align: left;">機能・備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">WriteData</td>
+<td style="text-align: center;">0x000</td>
+<td style="text-align: center;">W</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">未使用 (<code>Reserved</code>の上位8ビットを使用し常に更新される)</td>
+</tr>
+<tr>
+<td style="text-align: left;">BusyFlag</td>
+<td style="text-align: center;">0x200</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">SPI通信のビジー信号</td>
+</tr>
+<tr>
+<td style="text-align: left;">StartCycle</td>
+<td style="text-align: center;">0x300</td>
+<td style="text-align: center;">W</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">SPI通信の送信サイクル (FPGA→YAENAMI) を開始する</td>
+</tr>
+<tr>
+<td style="text-align: left;">ChipSelect</td>
+<td style="text-align: center;">0x400</td>
+<td style="text-align: center;">W</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">4つのASICのどれにデータを送るかを選択する (複数可)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="daq-controller-dct">DAQ Controller (DCT)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">レジスタ名</th>
+<th style="text-align: center;">Local Address</th>
+<th style="text-align: center;">読み書き</th>
+<th style="text-align: center;">ビット長</th>
+<th style="text-align: left;">機能・備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">DaqGate</td>
+<td style="text-align: center;">0x000</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">DAQ gateのON/OFF (TRMのトリガー出力の有効化/無効化)</td>
+</tr>
+<tr>
+<td style="text-align: left;">ResetEvb</td>
+<td style="text-align: center;">0x010</td>
+<td style="text-align: center;">W</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">EVB内のEventBuffer (FIFO) のリセット信号</td>
+</tr>
+</tbody>
+</table>
+<p>DaqGateはマニュアルで有効化/無効化することもできるが、<a href="https://github.com/spadi-alliance/rayraw-soft">rayraw-soft</a>を用いて取得したいイベント数を指定し、ソフトウェアによって自動的に有効化/無効化することを推奨する (<a href="../../../software/software/">Software</a>の項目も参照)。</p>
+<h3 id="tdc">TDC</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">レジスタ名</th>
+<th style="text-align: center;">Local Address</th>
+<th style="text-align: center;">読み書き</th>
+<th style="text-align: center;">ビット長</th>
+<th style="text-align: left;">機能・備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">EnBlock</td>
+<td style="text-align: center;">0x000</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">TDCBlock (Leading/Trailing) を有効化する</td>
+</tr>
+<tr>
+<td style="text-align: left;">OfsPtr</td>
+<td style="text-align: center;">0x010</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">リングバッファの読み出しポインタのオフセット</td>
+</tr>
+<tr>
+<td style="text-align: left;">WinMax</td>
+<td style="text-align: center;">0x020</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Time Windowの最大値</td>
+</tr>
+<tr>
+<td style="text-align: left;">WinMin</td>
+<td style="text-align: center;">0x030</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Time Windowの最小値</td>
+</tr>
+</tbody>
+</table>
+<h3 id="io-manager-iom">I/O Manager (IOM)</h3>
+<p>FPGA内部の信号線をNIMOUTへ割り当てたり、NIMINの信号をFPGA内部の信号線に接続したりする機能を持つ。
+HULのものを流用しているが、入出力ポートの数がHULと異なるため若干の違いが存在する。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">レジスタ名</th>
+<th style="text-align: center;">Local Address</th>
+<th style="text-align: center;">読み書き</th>
+<th style="text-align: center;">ビット長</th>
+<th style="text-align: left;">機能・備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">NimOut1</td>
+<td style="text-align: center;">0x000</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">NIMOUT1へ割り当てる内部信号線の選択</td>
+</tr>
+<tr>
+<td style="text-align: left;">NimOut2</td>
+<td style="text-align: center;">0x010</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">NIMOUT2へ割り当てる内部信号線の選択</td>
+</tr>
+<tr>
+<td style="text-align: left;">ExtL1</td>
+<td style="text-align: center;">0x040</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">内部信号線extL1へ割り当てる入力ポートの選択</td>
+</tr>
+<tr>
+<td style="text-align: left;">ExtL2</td>
+<td style="text-align: center;">0x050</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">内部信号線extL2へ割り当てる入力ポートの選択</td>
+</tr>
+<tr>
+<td style="text-align: left;">ExtClr</td>
+<td style="text-align: center;">0x060</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">内部信号線extClrへ割り当てる入力ポートの選択</td>
+</tr>
+<tr>
+<td style="text-align: left;">ExtBusy</td>
+<td style="text-align: center;">0x070</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">内部信号線extBusyへ割り当てる入力ポートの選択</td>
+</tr>
+</tbody>
+</table>
+<p>上記<code>NimOut1/2</code>の値に応じて以下の信号線がNIMOUT1/2に割り当てられる。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">NimOut1/2の値</th>
+<th style="text-align: center;">内部信号線</th>
+<th style="text-align: left;">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0x0</td>
+<td style="text-align: center;">moduleBusy</td>
+<td style="text-align: left;">TRMが発行するModule busyを出力</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x1</td>
+<td style="text-align: center;">daqGate</td>
+<td style="text-align: left;">DAQ gateを出力</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x2</td>
+<td style="text-align: center;">clk1MHz</td>
+<td style="text-align: left;">1 MHzのクロックを出力</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x3</td>
+<td style="text-align: center;">clk100kHz</td>
+<td style="text-align: left;">100 kHzのクロックを出力</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x4</td>
+<td style="text-align: center;">clk10kHz</td>
+<td style="text-align: left;">10 kHzのクロックを出力</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x5</td>
+<td style="text-align: center;">clk1kHz</td>
+<td style="text-align: left;">1 kHzのクロックを出力</td>
+</tr>
+<tr>
+<td style="text-align: center;">0xE</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">Lowを出力</td>
+</tr>
+</tbody>
+</table>
+<p>また、<code>ExtL1, ExtL2, ExtClr, ExtBusy</code> (表中<code>Ext*</code>とする) の値に応じて以下の入力ポートが対応する内部信号線に割り当てられる。
+ただしExtBusyはどこにも繋がっていないため、外からVeto信号を入力したとしてもRAYRAWではTriggerを止めることはできない。そのため、RAYRAWに入力するNIM信号自体にVetoをかけなければならない。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Ext*の値</th>
+<th style="text-align: center;">NIM入力ポート</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0x0</td>
+<td style="text-align: center;">NIMIN1</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x1</td>
+<td style="text-align: center;">NIMIN2</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x6</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>IOM内のデフォルトの入出力の割り当ては次の通りである。
+ただし、2025年2月時点ではIOMはNIMOUTと接続されておらず、かわりに<code>toplevel.vhd</code>内でNIMOUT1とNIMOUT2にそれぞれシステムクロックとModule busyが割り当てられている。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">NIM出力ポート</th>
+<th style="text-align: center;">デフォルト内部信号線</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NIMOUT1</td>
+<td style="text-align: center;">moduleBusy</td>
+</tr>
+<tr>
+<td style="text-align: center;">NIMOUT2</td>
+<td style="text-align: center;">clk1kHz</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">内部信号線</th>
+<th style="text-align: center;">デフォルトNIM入力ポート</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">extL1</td>
+<td style="text-align: center;">NIMIN1</td>
+</tr>
+<tr>
+<td style="text-align: center;">extL2</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">extClr</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">extBusy</td>
+<td style="text-align: center;">NIMIN2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adc">ADC</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">レジスタ名</th>
+<th style="text-align: center;">Local Address</th>
+<th style="text-align: center;">読み書き</th>
+<th style="text-align: center;">ビット長</th>
+<th style="text-align: left;">機能・備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">OfsPtr</td>
+<td style="text-align: center;">0x000</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">リングバッファの読み出し位置を示すポインタ</td>
+</tr>
+<tr>
+<td style="text-align: left;">WinMax</td>
+<td style="text-align: center;">0x010</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Time Windowの最大値</td>
+</tr>
+<tr>
+<td style="text-align: left;">WinMin</td>
+<td style="text-align: center;">0x020</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Time Windowの最小値</td>
+</tr>
+<tr>
+<td style="text-align: left;">AdcRoReset</td>
+<td style="text-align: center;">0x030</td>
+<td style="text-align: center;">W/R</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">ADC読み出し部 (FIFO等) のリセット信号 (デフォルトは1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">IsReady</td>
+<td style="text-align: center;">0x040</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">各ASICからのADC読み出し準備状況</td>
+</tr>
+</tbody>
+</table>
+<p><code>AdcRoReset</code>について少し補足をしておく。
+このready信号は<code>YaenamiAdc.vhd</code>内で値の設定が行われており、IDELAYにより適切な遅延がかかりISERDESのbitslipが適切な値になったタイミングで1となる (<a href="../../trg-adc-tdc/trg-adc-tdc/">TRG-ADC-TDC</a>のADCの項目参照) 。</p>
+<h3 id="max1932-controller-apd">MAX1932 Controller (APD)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">レジスタ名</th>
+<th style="text-align: center;">Local Address</th>
+<th style="text-align: center;">読み書き</th>
+<th style="text-align: center;">ビット長</th>
+<th style="text-align: left;">機能・備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Txd</td>
+<td style="text-align: center;">0x000</td>
+<td style="text-align: center;">W</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">MAX1932への8ビットDAC入力</td>
+</tr>
+<tr>
+<td style="text-align: center;">ExecWrite</td>
+<td style="text-align: center;">0x100</td>
+<td style="text-align: center;">W</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: left;">SPI通信(送信)を開始する</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-structure">Data structure</h2>
+<p>EVBにより生成される1イベントのデータ構造は以下の通りである (データは全て32ビット長) 。</p>
+<pre><code>Header 1: | 0xFFFF0160 |
+Header 2: | 0xFF0 | 0 | overflow (1-bit) | event size (18-bits) |
+Header 3: | 0xFF | 0 (enRM) | 000 | 0000 (trigger tag) | event number (16-bits) |
+TDCL   1: | 0xCC | 0 | TDC ch (7-bits) | 0 | TDC data (15-bits) |
+                                   ...
+TDCL  n1: | 0xCC | 0 | TDC ch (7-bits) | 0 | TDC data (15-bits) |
+TDCT   1: | 0xCD | 0 | TDC ch (7-bits) | 0 | TDC data (15-bits) |
+                                   ...
+TDCT  n2: | 0xCD | 0 | TDC ch (7-bits) | 0 | TDC data (15-bits) |
+ADC    1: | 0xA | ADC ch (5-bits) | 00 | coarse TDC (11-bits) | ADC (10-bits) |
+                                   ...
+ADC   n3: | 0xA | ADC ch (5-bits) | 00 | coarse TDC (11-bits) | ADC (10-bits) |
+</code></pre>
+<p>まず、イベントの区切りを表すHeader 1が送られる。
+次に、イベントに含まれるTDCL (TDC Leading)、TDCT (TDC Trailing)、ADCからのワード数の合計<code>n1+n2+n3</code>をイベントサイズとしてHeader 2が送られる。
+Header 2内の<code>overflow</code>は1イベント中にTDCでカウントできる最大のヒット数を超えた場合に1となるフラグである。
+続いて現在のイベント番号がHeader 3として送られた後、TDCL、TDCT、ADCからのデータがこの順に送られる。
+15ビットTDCデータの上位11ビットはシステムクロック単位で測られる粗い時間情報 (coarse TDC) であり、ADCはこのcoarse TDCを通じてより細い時間分解能を持つTDCデータと紐付けられる。</p>
+<p>なお、上のブロック中の<code>enRM</code>および<code>trigger tag</code>は、HULにおいてExt/J0/RMのどのトリガーでデータ取得をしたかを識別するために用いられていたが、RAYRAWにおいては常に値0となる。</p>
+<h2 id="rayrawled">RAYRAW上のスイッチ・LEDの機能</h2>
+<h3 id="sw1">SW1の機能</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">スイッチ番号</th>
+<th style="text-align: center;">機能</th>
+<th style="text-align: left;">詳細</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">not used</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">SiTCP force default</td>
+<td style="text-align: left;">OFFでSiTCPのデフォルトモードで起動します。電源投入前に設定している必要があります。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">C6C reset</td>
+<td style="text-align: left;">Jitter Cleaner (CDCE62002)のHardware Resetです。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">not used</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">not used</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">not used</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">not used</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">not used</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sw2">SW2</h3>
+<p>全てのモジュールをリセットするためのHardware Reset。</p>
+<h3 id="led">LED</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">番号</th>
+<th style="text-align: left;">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">点灯中はTCP接続が張られています。</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">RAYRAWがBUSY信号を出しています。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">TDCやADCに用いるCoarse、Fine Clockを作るMMCMがロックしています。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Jitter Cleaner (CDCE62002)がロックしています。</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SPADI-A
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
